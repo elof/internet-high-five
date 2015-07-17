@@ -60,7 +60,7 @@ function init(){
 
     // keen sending events and drawing graphs
       var query = new Keen.Query("count", {
-        eventCollection: "highfives",
+        eventCollection: "highfive",
         timezone: "UTC"
       });
       client.draw(query, document.getElementById("my_chart"), {
@@ -68,7 +68,7 @@ function init(){
       });
 
       var query = new Keen.Query("count", {
-        eventCollection: "highfives",
+        eventCollection: "highfive",
         timeframe: "this_1_days",
         timezone: "UTC"
       });
