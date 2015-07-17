@@ -1,5 +1,10 @@
+body {
+  margin:0;
+  padding:0;
+}
 #title {
   text-align: center;
+  margin-top: 100px;
 }
 #stats {
   text-align: center;
@@ -35,6 +40,9 @@ button.btn.btn-primary.btn-lg {
 header {
   background-color: black;
   color: white;
+  width:100%;
+  position:fixed;
+  top:0;
 }
 header a img {
   width:200px;
