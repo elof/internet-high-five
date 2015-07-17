@@ -1,0 +1,60 @@
+#title {
+  text-align: center;
+}
+#stats {
+  text-align: center;
+}
+img#photo_one {
+  margin-left: auto;
+  margin-right: auto;
+  display:block;
+  width: 75%; //set default width
+  height: 100%; //set default height
+  max-width: 1920px; //set max width
+  max-height: 1080px; //set max height
+  z-index: -999999; //set z-index so it won't overlap any other element.
+}
+img#photo_two {
+  margin-left: auto;
+  margin-right: auto;
+  display:block;
+  width: 75%; //set default width
+  height: 100%; //set default height
+  max-width: 1920px; //set max width
+  max-height: 1080px; //set max height
+  z-index: -999999; //set z-index so it won't overlap any other element.
+}
+button.btn.btn-primary.btn-lg {
+  margin-left: auto;
+  margin-right: auto;
+  display:block;
+  background-color: #00AFD7;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+header {
+  background-color: black;
+  color: white;
+}
+header a img {
+  width:200px;
+  height:auto;
+  margin-top: -30px;
+}
+header li a {
+  color:white;
+}
+button.navbar-toggle.collapsed {
+  background-color: #F35757;
+}
+.btn.navbar-btn {
+  background-color:#F35757;
+}
+#my_chart , #my_chart_two {
+  margin-left: auto;
+  margin-right: auto;
+  display:block;
+  width: 50%;
+  height: 100%;
+  margin-bottom: 20px;
+}
