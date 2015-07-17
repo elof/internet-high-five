@@ -36,6 +36,29 @@ function init(){
   };
 
   $("img#photo_two").hide();
+  $("h2#stats").hide();
+
+  // keen sending events and drawing graphs
+  function queryOne() {
+        var query = new Keen.Query("count", {
+        eventCollection: "highfive",
+        timezone: "UTC"
+      });
+      client.draw(query, document.getElementById("my_chart"), {
+        title: "all time"
+      });
+    }
+
+    function queryTwo() {
+        var query = new Keen.Query("count", {
+        eventCollection: "highfive",
+        timeframe: "this_1_days",
+        timezone: "UTC"
+      });
+       client.draw(query, document.getElementById("my_chart_two"), {
+         title: "just today"
+      });
+    }
 
   $("button.btn.btn-primary.btn-lg").click(function() {
     for(i=0;i<3;i++) {
@@ -47,6 +70,9 @@ function init(){
         $("body").css("background-color", "black");
         $("#title").css("color", "white");
         $("#stats").css("color", "white");
+        queryOne();
+        queryTwo();
+        $("h2#stats").show();
         imgOff = true;
       } else {
         $("img#photo_two").hide();
@@ -58,38 +84,8 @@ function init(){
       }
     });
 
-    // keen sending events and drawing graphs
-      var query = new Keen.Query("count", {
-        eventCollection: "highfive",
-        timezone: "UTC"
-      });
-      client.draw(query, document.getElementById("my_chart"), {
-        title: "all time"
-      });
-
-      var query = new Keen.Query("count", {
-        eventCollection: "highfive",
-        timeframe: "this_1_days",
-        timezone: "UTC"
-      });
-      client.draw(query, document.getElementById("my_chart_two"), {
-        title: "just today"
-      });
-
-      // tracker.recordEvent("highfives", highfive, function(err, res){
-      //   if (err) {
-      //     // there was an error!
-      //   }
-      //   else {
-      //     // see sample response below
-      //   }
-      // });
-
     var sessionTimer = KeenTracker.utils.timer();
     sessionTimer.start();
-
-    // var clickListener = KeenTracker.utils.listener('button.btn-primary');
-    // clickListener.on('click', function(e){ ... });
 
     KeenTracker.listenTo({
       'click button.btn-primary': function(e){
