@@ -73,6 +73,7 @@ function init(){
         queryOne();
         queryTwo();
         $("h2#stats").show();
+        $("button.btn.btn-primary.btn-lg").hide();
         imgOff = true;
       } else {
         $("img#photo_two").hide();
