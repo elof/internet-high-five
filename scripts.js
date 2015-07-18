@@ -26,17 +26,9 @@ function init(){
 
   var imgOff;
 
-  // var pageview = {
-  // view: true,
-  // referrer: document.referrer
-  // };
-
   var highfive = {
   highfive: true
   };
-
-  $("img#photo_two").hide();
-  $("h2#stats").hide();
 
   // keen sending events and drawing graphs
   function queryOne() {
@@ -61,13 +53,14 @@ function init(){
     }
 
   $("button.btn.btn-primary.btn-lg").click(function() {
-    for(i=0;i<3;i++) {
+    for(i=0;i<10;i++) {
       $("h1#title").fadeTo('fast', 0.5).fadeTo('fast', 1.0);
     }
       if (!imgOff) {
         $("img#photo_one").hide();
         $("img#photo_two").show();
         $("body").css("background-color", "black");
+        $("h1#title").show();
         $("#title").css("color", "white");
         $("#stats").css("color", "white");
         queryOne();

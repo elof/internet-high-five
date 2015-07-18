@@ -30,12 +30,9 @@ img#photo_two {
   z-index: -999999; //set z-index so it won't overlap any other element.
 }
 button.btn.btn-primary.btn-lg {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 72px auto 10px auto;
   display:block;
   background-color: #00AFD7;
-  margin-top: 10px;
-  margin-bottom: 50px;
 }
 header {
   background-color: black;
