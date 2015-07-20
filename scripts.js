@@ -78,8 +78,15 @@ function init(){
       }
     });
 
+    var sessionCookie = KeenTracker.utils.cookie('track-session');
+    if (!sessionCookie.get('user_id')) {
+        sessionCookie.set('user_id', KeenTracker.helpers.getUniqueId());
+    }
+
     var sessionTimer = KeenTracker.utils.timer();
     sessionTimer.start();
+
+    var uniqueId = KeenTracker.helpers.getUniqueId();
 
     KeenTracker.listenTo({
       'click button.btn-primary': function(e){
@@ -108,8 +115,9 @@ function init(){
             },
             time: KeenTracker.helpers.getDatetimeIndex(),
             visitor: {
-                // id: sessionCookie.get('user_id'),
-                time_on_page: sessionTimer.value()
+                id: sessionCookie.get('user_id'),
+                time_on_page: sessionTimer.value(),
+                UUID: uniqueId
             },
             // geo: {} (add-on)
             keen: {
