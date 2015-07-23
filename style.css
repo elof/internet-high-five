@@ -34,26 +34,16 @@ button.btn.btn-primary.btn-lg {
   display:block;
   background-color: #00AFD7;
 }
-header {
-  background-color: black;
-  color: white;
-  width:100%;
-  position:fixed;
-  top:0;
+#logo {
+  text-align:center;
+  color:white;
 }
-header a img {
+#logo a img {
   width:200px;
   height:auto;
-  margin-top: -30px;
-}
-header li a {
-  color:white;
 }
 button.navbar-toggle.collapsed {
   background-color: #F35757;
-}
-.btn.navbar-btn {
-  background-color:#F35757;
 }
 #my_chart , #my_chart_two {
   margin-left: auto;
