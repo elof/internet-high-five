@@ -52,6 +52,7 @@ function init(){
       });
     }
 
+  // logic for the highfive, only enabled once but could be turned into a loop  
   $("button.btn.btn-primary.btn-lg").click(function() {
     for(i=0;i<10;i++) {
       $("h1#title").fadeTo('fast', 0.5).fadeTo('fast', 1.0);
@@ -78,15 +79,18 @@ function init(){
       }
     });
 
-    var sessionCookie = KeenTracker.utils.cookie('track-session');
-    if (!sessionCookie.get('user_id')) {
-        sessionCookie.set('user_id', KeenTracker.helpers.getUniqueId());
+    var uniqueId; // = KeenTracker.helpers.getUniqueId();
+    var userId;
+
+    var sessionCookie = window.sessionCookie = KeenTracker.utils.cookie('track-session');
+    if ('string' !== typeof sessionCookie.get('guest_id')) {
+        console.log('setting cookie');
+        sessionCookie.set('guest_id', KeenTracker.helpers.getUniqueId());
     }
+    console.log('guest_id', sessionCookie.get('guest_id'));
 
     var sessionTimer = KeenTracker.utils.timer();
     sessionTimer.start();
-
-    var uniqueId = KeenTracker.helpers.getUniqueId();
 
     KeenTracker.listenTo({
       'click button.btn-primary': function(e){
@@ -116,8 +120,7 @@ function init(){
             time: KeenTracker.helpers.getDatetimeIndex(),
             visitor: {
                 id: sessionCookie.get('user_id'),
-                time_on_page: sessionTimer.value(),
-                UUID: uniqueId
+                time_on_page: sessionTimer.value()
             },
             // geo: {} (add-on)
             keen: {
