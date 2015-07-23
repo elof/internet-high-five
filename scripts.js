@@ -52,7 +52,7 @@ function init(){
       });
     }
 
-  // logic for the highfive, only enabled once but could be turned into a loop  
+  // logic for the highfive, only enabled once but could be turned into a loop
   $("button.btn.btn-primary.btn-lg").click(function() {
     for(i=0;i<10;i++) {
       $("h1#title").fadeTo('fast', 0.5).fadeTo('fast', 1.0);
@@ -84,10 +84,8 @@ function init(){
 
     var sessionCookie = window.sessionCookie = KeenTracker.utils.cookie('track-session');
     if ('string' !== typeof sessionCookie.get('guest_id')) {
-        console.log('setting cookie');
         sessionCookie.set('guest_id', KeenTracker.helpers.getUniqueId());
     }
-    console.log('guest_id', sessionCookie.get('guest_id'));
 
     var sessionTimer = KeenTracker.utils.timer();
     sessionTimer.start();
