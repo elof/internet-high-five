@@ -41,16 +41,15 @@ function init(){
         $("body").css("background-color", "black");
         $("h1#title").show();
         $("#title").css("color", "white");
-        $("#stats").css("color", "white");
-        $("h2#stats").show();
         $("button.btn.btn-primary.btn-lg").hide();
+        $("#rock").show();
+        console.log("hit");
         imgOff = true;
       } else {
         $("img#photo_two").hide();
         $("img#photo_one").show();
         $("body").css("background-color", "white");
         $("#title").css("color", "black");
-        $("#stats").css("color", "black");
         imgOff = false;
       }
     });
