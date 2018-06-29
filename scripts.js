@@ -42,8 +42,6 @@ function init(){
         $("h1#title").show();
         $("#title").css("color", "white");
         $("#stats").css("color", "white");
-        queryOne();
-        queryTwo();
         $("h2#stats").show();
         $("button.btn.btn-primary.btn-lg").hide();
         imgOff = true;

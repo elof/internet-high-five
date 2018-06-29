@@ -34,12 +34,11 @@ button.btn.btn-primary.btn-lg {
   display:block;
   background-color: #00AFD7;
 }
-#logo {
+#rock {
   text-align:center;
   color:white;
 }
-#logo a img {
-  width:200px;
+#rock a img {
   height:auto;
 }
 button.navbar-toggle.collapsed {
