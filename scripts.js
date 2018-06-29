@@ -30,28 +30,6 @@ function init(){
   highfive: true
   };
 
-  // keen sending events and drawing graphs
-  function queryOne() {
-        var query = new Keen.Query("count", {
-        eventCollection: "highfive",
-        timezone: "UTC"
-      });
-      client.draw(query, document.getElementById("my_chart"), {
-        title: "all time"
-      });
-    }
-
-    function queryTwo() {
-        var query = new Keen.Query("count", {
-        eventCollection: "highfive",
-        timeframe: "this_1_days",
-        timezone: "UTC"
-      });
-       client.draw(query, document.getElementById("my_chart_two"), {
-         title: "just today"
-      });
-    }
-
   // logic for the highfive, only enabled once but could be turned into a loop
   $("button.btn.btn-primary.btn-lg").click(function() {
     for(i=0;i<10;i++) {
