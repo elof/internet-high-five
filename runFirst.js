@@ -4,7 +4,7 @@ function init(){
   $("img#photo_two").hide();
   $("h2#stats").hide();
   $("#rock").hide();
-  // console.log("hit");
+  console.log("hit");
 }
 
 init();
